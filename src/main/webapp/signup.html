@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Sign Up - TutorConnect</title>
+    <link rel="stylesheet" href="/tutorconnect/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Join TutorConnect</h1>
+            <p>Create your account to get started</p>
+        </div>
+        <div class="content">
+            <div class="form-container">
+                <h2>Sign Up</h2>
+                <form method="post" action="/tutorconnect/signup">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input name="email" type="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input name="password" type="password" required placeholder="Choose a strong password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input name="phone" placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Account Type</label>
+                        <select name="role">
+                            <option value="STUDENT">Student - Looking for tutoring</option>
+                            <option value="TUTOR">Tutor - Offering tutoring services</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-full">Create Account</button>
+                </form>
+            </div>
+            <div class="text-center">
+                <a href="/tutorconnect/" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

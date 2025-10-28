@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Bookings - TutorConnect</title>
+    <link rel="stylesheet" href="/tutorconnect/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Manage Bookings</h1>
+            <p>Create and manage your tutoring sessions</p>
+        </div>
+        <div class="content">
+            <div class="form-container">
+                <h2>Create New Booking</h2>
+                <p>Students can create new booking requests here.</p>
+                <form method="post" action="/tutorconnect/app/bookings">
+                    <input type="hidden" name="action" value="create">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tutor ID</label>
+                            <input name="tutorId" required placeholder="Enter tutor's ID number">
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input name="subject" required placeholder="e.g., Java Programming">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Session Date & Time</label>
+                        <input name="startAt" required placeholder="YYYY-MM-DD HH:MM:SS (e.g., 2025-11-01 10:00:00)">
+                    </div>
+                    <button type="submit" class="btn btn-full">Create Booking Request</button>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h2>Update Booking Status</h2>
+                <p>Tutors can approve, reject, or cancel booking requests here.</p>
+                <form method="post" action="/tutorconnect/app/bookings">
+                    <input type="hidden" name="action" value="status">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Booking ID</label>
+                            <input name="id" required placeholder="Enter booking ID">
+                        </div>
+                        <div class="form-group">
+                            <label>New Status</label>
+                            <select name="status">
+                                <option value="APPROVED">✅ Approve</option>
+                                <option value="REJECTED">❌ Reject</option>
+                                <option value="CANCELLED">🚫 Cancel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-full">Update Status</button>
+                </form>
+            </div>
+            
+            <div class="text-center">
+                <a href="/tutorconnect/" class="back-link">← Back to Home</a>
+                <a href="/tutorconnect/profile" class="back-link">My Profile →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
